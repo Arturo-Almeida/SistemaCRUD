@@ -1,0 +1,55 @@
+﻿@model WebApplication1.Models.Entidades.Usuario
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreUsuario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NombreUsuario)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Edad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Edad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+        <dd>
+            @if (Model.Tipo == 1)
+            {
+                <label>Administrador</label>
+            }
+            else
+                if (Model.Tipo == 2)
+            {
+                <label>Técnico</label>
+            }
+            else
+                if (Model.Tipo == 3)
+            {
+                <label>Usuário Normal</label>
+            }
+
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">REGRESAR A LA LISTA</a>
+</div>
